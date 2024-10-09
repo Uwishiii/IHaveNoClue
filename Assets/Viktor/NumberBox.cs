@@ -40,4 +40,13 @@ public class NumberBox : MonoBehaviour
             swapFunc(x,y);
         }
     }
+    private void OnMouseOver()
+    {
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("Pressed r when the mouse is over it");
+            this.GameObject().transform.Rotate(0.0f, 0.0f, 90.0f);
+        }
+    }
 }

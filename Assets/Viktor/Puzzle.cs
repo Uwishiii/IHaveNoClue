@@ -21,13 +21,15 @@ public class Puzzle : MonoBehaviour
         for (int y=3;y>=0;y--)
         for (int x = 0; x < 4; x++)
         {
-            NumberBox box = Instantiate(BoxPrefab, new Vector2(x,y), Quaternion.identity);
+            NumberBox box = Instantiate(BoxPrefab, new Vector3(x,y), Quaternion.identity);
             box.Init(x,y,n+1, sprites[n],ClickToSwap);
             boxes[x,y] = box;
             n++;
         }
 
     }
+
+   
 
     void ClickToSwap(int x, int y)
     {
