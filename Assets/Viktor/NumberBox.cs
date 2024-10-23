@@ -22,13 +22,31 @@ public class NumberBox : MonoBehaviour
         this.swapFunc = swapFunc;
     }
 
+    
+    
     public void UpdatePos(int i, int j)
     {
         x = i;
         y = j;
-        this.gameObject.transform.localPosition = new Vector2(i,j);
+        StartCoroutine(Move());
+        
     }
 
+    IEnumerator Move()
+    {
+        float elapseTime = 0;
+        float duration = 0.2f;
+        Vector2 start = this.gameObject.transform.localPosition;
+        Vector2 end = new Vector2(x,y);
+        while (elapseTime < duration)
+        {
+            this.gameObject.transform.localPosition = Vector2.Lerp(start,end,(elapseTime / duration));
+            elapseTime += Time.deltaTime;
+            yield return null;
+        }
+        this.gameObject.transform.localPosition = end;
+    }
+    
     public bool IsEmpty()
     {
         return index == 16;
