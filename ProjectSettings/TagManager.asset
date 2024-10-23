@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BrokenPipe
   - HammerHead
+  - fuse1
   layers:
   - Default
   - TransparentFX
