@@ -10,10 +10,9 @@ public class Puzzle : MonoBehaviour
     private void Start()
     {
         Init(); 
-        for (int i = 0; i < 999; i++)
-        Shuffle();
+        RotatePieces();
     }
-
+    
     void Init()
     {
         int n = 0;
@@ -28,7 +27,21 @@ public class Puzzle : MonoBehaviour
 
     }
 
-
+    void RotatePieces()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (!boxes[i, j].IsEmpty())
+                {
+                    // Rotate the piece randomly by a multiple of 90 degrees
+                    int randomRotation = Random.Range(0, 4) * 90;
+                    boxes[i, j].transform.rotation = Quaternion.Euler(0, 0, randomRotation);
+                }
+            }
+        }
+    }
     void ClickToSwap(int x, int y)
     {
         int dx = getDx(x, y); 
