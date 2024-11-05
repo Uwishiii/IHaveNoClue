@@ -6,13 +6,17 @@ public class Puzzle : MonoBehaviour
     public NumberBox BoxPrefab;
     public NumberBox[,] boxes = new NumberBox[4,4];
     public Sprite[] sprites;
-
+    public GameObject canvas;
     private void Start()
     {
         Init(); 
         RotatePieces();
     }
-    
+
+    private void Update()
+    {
+        CheckIfPuzzleIsSolved();
+    }
     void Init()
     {
         int n = 0;
@@ -26,7 +30,43 @@ public class Puzzle : MonoBehaviour
         }
 
     }
+    void CheckIfPuzzleIsSolved()
+    {
+        bool allPiecesCorrect = true;
 
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (!boxes[i, j].IsEmpty())
+                {
+                    // Check if the current rotation is correct
+                    float currentRotation = boxes[i, j].transform.rotation.eulerAngles.z;
+                
+                    // Assuming the correct rotation for each piece is 0 degrees
+                    if (Mathf.Abs(currentRotation % 360) > 1e-2) // Small margin for floating-point inaccuracies
+                    {
+                        allPiecesCorrect = false;
+                        break;
+                    }
+                }
+            }
+
+            if (!allPiecesCorrect)
+            {
+                break;
+            }
+        }
+
+        if (allPiecesCorrect)
+        {
+            canvas.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("Puzzle is not solved yet.");
+        }
+    }
     void RotatePieces()
     {
         for (int i = 0; i < 4; i++)
