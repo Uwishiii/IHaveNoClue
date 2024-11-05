@@ -9,6 +9,7 @@ TagManager:
   - fuse1
   - fuse2
   - fuse3
+  - fixedFuseBox
   layers:
   - Default
   - TransparentFX
