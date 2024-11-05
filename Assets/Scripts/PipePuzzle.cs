@@ -13,7 +13,7 @@ public class PipePuzzle : MonoBehaviour
         {
             Debug.Log("Hammer");
             fixedPipe.SetActive(true);
-            brokenPipe.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -46,6 +46,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Pipe
       objectReference: {fileID: 0}
+    - target: {fileID: 1269250306394356343, guid: de3de7419621f0c40be14749333de01b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8477691726637418913, guid: de3de7419621f0c40be14749333de01b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -125,6 +130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bursted Pipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 975725686207480248, guid: 2caf5234c12a6c14ab7392cbb409bea9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2175543139480595138, guid: 2caf5234c12a6c14ab7392cbb409bea9,
         type: 3}
