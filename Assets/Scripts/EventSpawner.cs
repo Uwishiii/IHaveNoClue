@@ -33,13 +33,9 @@ public class EventSpawner : MonoBehaviour
         _lastEvent = events.Count;
     }
 
-    private void Update()
+    public void StartMission()
     {
-        // For testing purposes
-        if (Input.GetKeyDown(KeyCode.Space) && _missionStarted)
-        { 
-            StartCoroutine(_enumerator);
-        }
+        StartCoroutine(_enumerator);
     }
     
     IEnumerator Spawn ()
