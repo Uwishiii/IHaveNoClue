@@ -64,7 +64,7 @@ public class Puzzle : MonoBehaviour
         }
         else
         {
-            Debug.Log("Puzzle is not solved yet.");
+            //Debug.Log("Puzzle is not solved yet.");
         }
     }
     void RotatePieces()
