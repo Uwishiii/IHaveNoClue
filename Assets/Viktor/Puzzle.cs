@@ -6,7 +6,7 @@ public class Puzzle : MonoBehaviour
     public NumberBox BoxPrefab;
     public NumberBox[,] boxes = new NumberBox[4,4];
     public Sprite[] sprites;
-    public GameObject canvas;
+    //public GameObject canvas;
     private void Start()
     {
         Init(); 
@@ -60,7 +60,7 @@ public class Puzzle : MonoBehaviour
 
         if (allPiecesCorrect)
         {
-            canvas.SetActive(true);
+            //canvas.SetActive(true);
         }
         else
         {
@@ -166,12 +166,12 @@ public class Puzzle : MonoBehaviour
             if (n == 0)
             
                 pos = Vector2.left;
-                else if (n == 1)
-                    pos = Vector2.right;
-                else if (n == 2)
-                    pos = Vector2.up;
-                else
-                    pos = Vector2.down;
+            else if (n == 1)
+                pos = Vector2.right;
+            else if (n == 2)
+                pos = Vector2.up;
+            else
+                pos = Vector2.down;
             
         }while(!(isValidRange(x +(int)pos.x) && isValidRange((y+(int)pos.y))||  isRepeatMove(pos)));
         lastMove = pos;

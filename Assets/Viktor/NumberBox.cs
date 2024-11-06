@@ -51,6 +51,13 @@ public class NumberBox : MonoBehaviour
     {
         return index == 16;
     }
+
+    public void RotateSquare()
+    {
+        this.GameObject().transform.Rotate(0.0f, 0.0f, 90.0f);
+    }
+    
+    /*
     void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0) && swapFunc != null)
@@ -58,6 +65,7 @@ public class NumberBox : MonoBehaviour
             swapFunc(x,y);
         }
     }
+
     private void OnMouseOver()
     {
 
@@ -67,4 +75,5 @@ public class NumberBox : MonoBehaviour
             this.GameObject().transform.Rotate(0.0f, 0.0f, 90.0f);
         }
     }
+    */
 }
