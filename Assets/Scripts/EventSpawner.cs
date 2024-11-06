@@ -35,7 +35,10 @@ public class EventSpawner : MonoBehaviour
 
     public void StartMission()
     {
-        StartCoroutine(_enumerator);
+        if (!_missionStarted)
+        {
+            StartCoroutine(_enumerator);
+        }
     }
     
     IEnumerator Spawn ()
