@@ -7,7 +7,7 @@ public class LoseCondition : MonoBehaviour
 
     private void Update()
     {
-        if (defconMax >= defconCount)
+        if (defconMax <= defconCount)
         {
             GameOver();
         }
